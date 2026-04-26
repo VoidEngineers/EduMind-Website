@@ -29,8 +29,7 @@ if (milestoneFilter) {
 
     milestoneCards.forEach((card) => {
       const shouldShow =
-        selectedValue === "all" ||
-        card.dataset.milestone === selectedValue;
+        selectedValue === "all" || card.dataset.milestone === selectedValue;
 
       card.classList.toggle("is-hidden", !shouldShow);
     });
@@ -85,10 +84,12 @@ if (yearElement) {
 }
 
 const animatedElements = document.querySelectorAll(
-  ".section, .hero-copy, .hero-visual, .info-card, .pipeline-step, .resource-card, .team-card, .disease-card, .milestone-card, .contact-panel, .contact-form"
+  ".section, .hero-copy, .hero-visual, .info-card, .pipeline-step, .resource-card, .team-card, .disease-card, .milestone-card, .contact-panel, .contact-form",
 );
 
-const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+const reducedMotionQuery = window.matchMedia(
+  "(prefers-reduced-motion: reduce)",
+);
 
 if (animatedElements.length) {
   if (reducedMotionQuery.matches) {
@@ -114,7 +115,7 @@ if (animatedElements.length) {
       {
         threshold: 0.15,
         rootMargin: "0px 0px -60px 0px",
-      }
+      },
     );
 
     animatedElements.forEach((element) => {
