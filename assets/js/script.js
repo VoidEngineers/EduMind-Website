@@ -83,3 +83,42 @@ if (contactForm && formNote && sendMessageButton) {
 if (yearElement) {
   yearElement.textContent = String(new Date().getFullYear());
 }
+
+const animatedElements = document.querySelectorAll(
+  ".section, .hero-copy, .hero-visual, .info-card, .pipeline-step, .resource-card, .team-card, .disease-card, .milestone-card, .contact-panel, .contact-form"
+);
+
+const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+if (animatedElements.length) {
+  if (reducedMotionQuery.matches) {
+    animatedElements.forEach((element) => {
+      element.classList.add("is-visible");
+    });
+  } else {
+    animatedElements.forEach((element) => {
+      element.classList.add("reveal");
+    });
+
+    const revealObserver = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) {
+            return;
+          }
+
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        });
+      },
+      {
+        threshold: 0.15,
+        rootMargin: "0px 0px -60px 0px",
+      }
+    );
+
+    animatedElements.forEach((element) => {
+      revealObserver.observe(element);
+    });
+  }
+}
