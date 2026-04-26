@@ -31,8 +31,16 @@ body {
   font-family: "Poppins", sans-serif;
   color: var(--text);
   background:
-    radial-gradient(circle at top left, rgba(123, 63, 242, 0.2), transparent 30%),
-    radial-gradient(circle at right 18%, rgba(216, 195, 255, 0.32), transparent 30%),
+    radial-gradient(
+      circle at top left,
+      rgba(123, 63, 242, 0.2),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at right 18%,
+      rgba(216, 195, 255, 0.32),
+      transparent 30%
+    ),
     linear-gradient(180deg, #fcf8ff 0%, var(--bg) 56%, #ede2ff 100%);
   line-height: 1.6;
 }
@@ -269,7 +277,11 @@ h1 {
 }
 
 .button-primary {
-  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-blue) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--accent) 0%,
+    var(--accent-blue) 100%
+  );
   color: #fff;
   box-shadow: 0 14px 30px rgba(79, 34, 173, 0.3);
 }
@@ -364,7 +376,11 @@ h1 {
 }
 
 .section-tinted {
-  background: linear-gradient(180deg, rgba(251, 246, 255, 0.94), rgba(216, 195, 255, 0.5));
+  background: linear-gradient(
+    180deg,
+    rgba(251, 246, 255, 0.94),
+    rgba(216, 195, 255, 0.5)
+  );
 }
 
 .section-heading {
@@ -514,7 +530,11 @@ h1 {
   padding: 1.5rem;
   border-radius: var(--radius);
   background:
-    radial-gradient(circle at top right, rgba(216, 195, 255, 0.32), transparent 36%),
+    radial-gradient(
+      circle at top right,
+      rgba(216, 195, 255, 0.32),
+      transparent 36%
+    ),
     rgba(255, 251, 248, 0.86);
   border: 1px solid var(--line);
   transition: transform 0.25s ease;
@@ -746,7 +766,7 @@ h1 {
   color: var(--text-soft);
   font-size: 0.92rem;
 }
-  
+
 .site-footer {
   padding: 0.75rem 0 1rem;
 }
@@ -847,10 +867,10 @@ h1 {
   .milestone-card {
     grid-template-columns: 1fr;
   }
-  
-    .hero-section {
-      padding-top: 2.5rem;
-    }
+
+  .hero-section {
+    padding-top: 2.5rem;
+  }
 
   .hero-visual {
     min-height: 260px;
