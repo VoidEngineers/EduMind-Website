@@ -832,6 +832,10 @@ h1 {
 }
 
 @media (max-width: 760px) {
+  .brand-logo {
+    width: 6rem;
+  }
+
   .menu-toggle {
     display: inline-flex;
   }
